@@ -1,7 +1,6 @@
 _inputStr = input("Input separated by space char: ")
 
 _input = _inputStr.split()
-_output = []
 print("Input : ", _input)
 
 def swapValue(_input, i, j):
