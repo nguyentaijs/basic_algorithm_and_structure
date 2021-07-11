@@ -1,5 +1,7 @@
 {
 	"python.pythonPath": "C:\\Users\\admin\\AppData\\Local\\Microsoft\\WindowsApps\\python3.7.exe",
 	"python.formatting.provider": "yapf",
-	"editor.detectIndentation": false
+	"editor.detectIndentation": false,
+	"python.linting.pylintEnabled": true,
+	"python.linting.enabled": true
 }
