@@ -9,28 +9,30 @@ import (
 	"strings"
 )
 
-
 func main() {
-	s := []int {1,4,34,2,56,29,85,50,421,111,423,64,666}
+	s := []int{1, 4, 34, 2, 56, 29, 85, 50, 421, 111, 423, 64, 666}
 	log.Printf("Input: %v\nPlease input search int:", s)
 
 	searchVal := getUserInt()
-	i, err := linearSearch(s, searchVal)
+	// Append sentinel to slice
+	s = append(s, searchVal)
+	i, err := sentinelLinearSearch(s, searchVal)
 	if err != nil {
 		log.Println(err)
 	} else {
-
 		log.Println("Found at", i)
 	}
 }
 
-func linearSearch(s []int, searchVal int) (int, error) {
-	for i := 0; i < len(s); i++ {
-		if s[i] == searchVal {
-			return i, nil
-		}
+func sentinelLinearSearch(s []int, searchVal int) (int, error) {
+	i := 0
+	for s[i] != searchVal {
+		i++
 	}
-	return 0, fmt.Errorf("Not found")
+	if (i == len(s) - 1) {
+		return i, fmt.Errorf("Not found")
+	}
+	return i, nil
 }
 
 func getUserInt() int {
