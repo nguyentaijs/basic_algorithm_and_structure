@@ -1,11 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
 )
 
 
@@ -36,18 +32,4 @@ func binarySearchRecursive(s []int, x int, left int, right int) (int, error) {
 	} else {
 		return binarySearchRecursive(s, x, left, mid-1)
 	}
-}
-
-func getUserInt() int {
-	reader := bufio.NewReader(os.Stdin)
-	text, err := reader.ReadString('\n')
-	if err != nil {
-		panic(err)
-	}
-	text = strings.ReplaceAll(text, "\r\n", "")
-	result, err := strconv.Atoi(text)
-	if err != nil {
-		panic(err)
-	}
-	return result
 }
